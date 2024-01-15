@@ -1,0 +1,16 @@
+[package]
+name = "rs_walk"
+version = "0.1.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+walkdir = "2.3"
+regex = "1.5"
+#libc = { version = "0.2", package = "libc" }
+pyo3 = { version = "0.20.2", features = ["extension-module"] }
+
+[lib]
+name = "xb_walk"
+crate-type = ["cdylib"]

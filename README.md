@@ -1,6 +1,7 @@
 # Convert_Rust_code_To_Python_module
 通过Rust代码快编译为pyd，替换Python系统模块或者自定义的模块，从而提高执行效率！
 
+------
 # 具体操作步骤
 
 ## Rust操作（如果已经安装直接忽略！！！）
@@ -38,8 +39,7 @@ registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 ```cmd
 # 检查rust版本号
 rustc -V
-​
-​
+
 # 检查包管理器版本号
 cargo -V
 ```
@@ -52,9 +52,9 @@ cargo new <ProjectName>
 # 创建(lib)扩展项目
 cargo new --lib <ProjectName>
 ```
-
+------
 ## Rust编码（必须的步骤！！！）
-- Cargo.toml 配置文件的编辑
+- Cargo.toml
 ```toml
 [package]
 name = "rs_walk"            # 创建的项目名称
@@ -75,8 +75,9 @@ crate-type = ["cdylib"]     # 勿动
 ```
 - lib.rs
 ```rust
-# 写法参考官网，有多种方式，我使用了#[pyfn(m)]这个语法糖，简化了代码（其实就是省略了`m.add_function(wrap_pyfunction!(xb_walk, m)?)?;`与函数的返回值）
-# #[pymodule] 与 #[pyfn(m)]  都是必须要写的，这个是pyO3规定好的，方便转为python可以调用的格式！
+/* 文件：lib.rs */
+// 写法参考官网，有多种方式，我使用了#[pyfn(m)]这个语法糖，简化了代码（其实就是省略了`m.add_function(wrap_pyfunction!(xb_walk, m)?)?;`与函数的返回值）
+// #[pymodule] 与 #[pyfn(m)]  都是必须要写的，这个是pyO3规定好的，方便转为python可以调用的格式！
 use std::path::PathBuf;
 use walkdir::WalkDir;
 use regex::Regex;
@@ -110,7 +111,7 @@ fn xb_walk(_py: Python, m: &PyModule) -> PyResult<()>{
     Ok(())
 }
 ```
-
+------
 ## Python操作（可以放在Rust编码之后不影响！！！）
 ### 1、准备虚拟环境（建议使用Python自带的即可）
 ```cmd
@@ -125,7 +126,6 @@ source .env/bin/activate
 
 # 3.Windows激活环境
 .\.env\Scripts\activate
-
 ```
 ### 2、安装【matuin】库
 `pip[3] install matuin`
@@ -144,5 +144,4 @@ import xb_walk
 
 result = xb_walk.walk('E:\\xiaobaisaf', 'xiaobaicmd.py')
 print(result)
-
 ```

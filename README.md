@@ -19,7 +19,6 @@ Windows系统的前置条件，需要安装【VS studio】，如果没有安装�
 export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
-
 # 执行安装命令（参考官网）
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
@@ -34,9 +33,9 @@ registry = "https://github.com/rust-lang/crates.io-index"
 replace-with = 'ustc'
 [source.ustc]
 registry = "git://mirrors.ustc.edu.cn/crates.io-index"
-```cmd
-### 3、检验版本
 ```
+### 3、检验版本
+```cmd
 # 检查rust版本号
 rustc -V
 ​

@@ -7,10 +7,10 @@
 
 ### 1、安装Rust环境
 
-[官网-安装步骤](https://www.rust-lang.org/zh-CN/tools/install "官网-安装步骤")
+[官网-安装教程](https://www.rust-lang.org/zh-CN/tools/install "官网-安装教程")
 
 - Windows系统安装程序
-[Windows系统的Rustup](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe "Windows系统的Rustup")
+[点击下载Rustup](https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe "Windows系统的Rustup")
 Windows系统的前置条件，需要安装【VS studio】，如果没有安装，直接选择【1】默认即可！
 
 - Linux/MacOS系统安装命令

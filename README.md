@@ -127,11 +127,11 @@ source .env/bin/activate
 # 3.Windows激活环境
 .\.env\Scripts\activate
 ```
-### 2、安装【matuin】库
-`pip[3] install matuin`
+### 2、安装【maturin】库
+`pip[3] install maturin`
 
 ### 3、执行构建命令
-`matuin build 或者 matuin develop`
+`maturin build 或者 maturin develop`
 
 ### 4、安装wheel
 `pip[3] install xxx-*-.whl`
